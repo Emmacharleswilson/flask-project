@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Hello Flask</title>
 </head>
 
@@ -48,7 +49,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1>Thorin &amp; Company</h1>
                         <span class="subheading">A Blog Theme by Start Bootstrap</span>
                     </div>
                 </div>
@@ -97,7 +98,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
+                    <p class="copyright text-muted">Copyright &copy; Your Website <span id="copyright"></span></p>
                 </div>
             </div>
         </div>
@@ -109,3 +110,11 @@
 
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+
+    <script>
+        $("#copyright").text(new Date().getFullYear());
+    </script>
+
+</body>
+
+</html>
